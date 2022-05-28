@@ -10,7 +10,9 @@ body {
   overflow-x: hidden;
 }
 
+/*---------------------- layouting bagian header---------------------------*/
 nav {
+  position: sticky;
   background-color: #ffcbe4;
   display: flex;
   padding: 24px 36px;
@@ -120,13 +122,76 @@ nav ul a:hover {
     right: 0;
     top: 0;
     width: 50%;
-    height: 100vh;
+    height: 80vh;
     flex-direction: column;
     transform: translateX(100%);
     transition: all 1s;
-}
+  }
 
   nav ul.slide {
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
+
+  .big-cat{
+      display: none;
+  }
+
+  .kata-kata{
+      display: none;
+  }
+
+}
+
+/*---------------------- batas layouting bagian header---------------------------*/
+
+/*---------------------- layouting bagian main---------------------------*/
+main {
+  overflow: auto;
+}
+
+.intro {
+    border-bottom: 2px solid;
+    border-color: #cc0363;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.kata-kata {
+    padding-top: 150px;
+    padding-left: 100px;
+    float: left;
+}
+
+h3 {
+    font-style: italic;
+}
+
+h4 {
+    font-weight: bold;
+    color: #cc0363;
+}
+
+.big-cat{
+    float: right;
+
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+/*----------------------Batas layouting bagian main---------------------------*/
+
+/*---------------------- layouting bagian footer---------------------------*/
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #cc0363;
+  text-align: center;
+  font-weight: bold;
 }
