@@ -7,6 +7,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 nav {
@@ -37,19 +38,57 @@ nav ul a:hover {
 }
 
 /* Hamburger Menu */
-.menu-toggle{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  position: relative;
 }
 
-.menu-toggle span{
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #cc0363;
-    border-radius: 3px;
+.menu-toggle input {
+  position: absolute;
+  width: 42px;
+  height: 28px;
+  left: -7px;
+  top: -4px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #cc0363;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(0px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
 }
 
 /* Responsive Breakdown */
@@ -68,10 +107,26 @@ nav ul a:hover {
 }
 
 @media screen and (max-width: 576px) {
-    nav {
-        justify-content: space-around;
-    }
-    nav ul {
-      display: none;
-    }
+  .menu-toggle {
+    display: flex;
   }
+
+  nav ul {
+    background-color: #ffcbe4;
+    z-index: -1;
+    position: absolute;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+  nav ul.slide {
+      transform: translateX(0);
+  }
+}
