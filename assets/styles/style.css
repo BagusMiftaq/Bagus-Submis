@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -95,8 +96,102 @@ nav ul a:hover {
 
 /* Responsive Breakdown */
 
+/*---------------------- batas layouting bagian header---------------------------*/
+
+/*---------------------- layouting bagian main---------------------------*/
+main {
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.intro {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kata-kata {
+  float: left;
+  padding-left: 150px;
+  padding-top: 150px;
+}
+
+h2 {
+  font-style: italic;
+  color: #cc0363;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-style: italic;
+}
+
+h4 {
+  font-weight: bold;
+  color: #cc0363;
+}
+
+.big-cat {
+  float: right;
+}
+
+.jenis {
+  height: 500px;
+  padding: 250px;
+  color: white;
+  background-color: #cc0363;
+  text-align: center;
+  font-weight: bold;
+}
+
+#content {
+  float: left;
+  width: 75%;
+}
+aside {
+  float: right;
+  width: 25%;
+  padding-left: 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.content-img {
+  border-radius: 25px;
+  width: 100%;
+  max-height: 800px;
+  object-fit: cover;
+  object-position: center;
+  padding-bottom: 20px;
+}
+
+/*----------------------Batas layouting bagian main---------------------------*/
+
+/*---------------------- layouting bagian footer---------------------------*/
+footer {
+  height: 200px;
+  padding: 100px;
+  color: white;
+  background-color: #cc0363;
+  text-align: center;
+  font-weight: bold;
+}
+
+
 /* ukuran mobile */
 @media screen and (max-width: 1000px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+  
   nav {
     height: 24px;
     align-items: center;
@@ -109,6 +204,7 @@ nav ul a:hover {
 }
 
 @media screen and (max-width: 576px) {
+
   .menu-toggle {
     display: flex;
   }
@@ -133,65 +229,15 @@ nav ul a:hover {
     transform: translateX(0);
   }
 
-  .big-cat{
-      display: none;
+  .big-cat {
+    display: none;
   }
 
-  .kata-kata{
-      display: none;
+  .kata-kata {
+    display: none;
   }
 
-}
-
-/*---------------------- batas layouting bagian header---------------------------*/
-
-/*---------------------- layouting bagian main---------------------------*/
-main {
-  overflow: auto;
-}
-
-.intro {
-    border-bottom: 2px solid;
-    border-color: #cc0363;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.kata-kata {
-    padding-top: 150px;
-    padding-left: 100px;
-    float: left;
-}
-
-h3 {
-    font-style: italic;
-}
-
-h4 {
-    font-weight: bold;
-    color: #cc0363;
-}
-
-.big-cat{
-    float: right;
-
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
+  .jenis {
+    display: none;
   }
-
-/*----------------------Batas layouting bagian main---------------------------*/
-
-/*---------------------- layouting bagian footer---------------------------*/
-footer {
-  padding: 20px;
-  color: white;
-  background-color: #cc0363;
-  text-align: center;
-  font-weight: bold;
 }
